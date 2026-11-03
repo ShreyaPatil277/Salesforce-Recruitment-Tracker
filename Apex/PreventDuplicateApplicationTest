@@ -1,0 +1,26 @@
+@isTest
+private class PreventDuplicateApplicationTest {
+
+    @isTest
+    static void duplicateIsBlocked() {
+        Position__c p = new Position__c(Name = 'Salesforce Developer');
+        insert p;
+        insert new Application__c(Position__c = p.Id,
+            Candidate_Name__c = 'Rahul', Candidate_Email__c = 'rahul@test.com');
+
+        Application__c dup = new Application__c(Position__c = p.Id,
+            Candidate_Name__c = 'Rahul', Candidate_Email__c = 'rahul@test.com');
+        Database.SaveResult sr = Database.insert(dup, false);
+        System.assert(!sr.isSuccess(), 'Duplicate should be blocked');
+    }
+
+    @isTest
+    static void uniqueIsAllowed() {
+        Position__c p = new Position__c(Name = 'HR Executive');
+        insert p;
+        Application__c a = new Application__c(Position__c = p.Id,
+            Candidate_Name__c = 'Priya', Candidate_Email__c = 'priya@test.com');
+        Database.SaveResult sr = Database.insert(a, false);
+        System.assert(sr.isSuccess());
+    }
+}
