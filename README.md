@@ -23,9 +23,6 @@ Position (1) ──< Application (Master-Detail)
 | Position__c | Department, Status, Number of Openings, Closing Date |
 | Application__c | Position (Master-Detail), Candidate Name, Candidate Email, Experience, Status, Application Date |
 
-## Screenshots
-![Schema](screenshots/schema-builder.png)
-![Dashboard](screenshots/dashboard.png)
 
 ## Tech
 Salesforce Developer Edition, Apex, Flow, Lightning App Builder, Reports & Dashboards
