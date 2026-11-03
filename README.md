@@ -27,6 +27,4 @@ Position (1) ──< Application (Master-Detail)
 ## Tech
 Salesforce Developer Edition, Apex, Flow, Lightning App Builder, Reports & Dashboards
 
-## What I learned
-Master-Detail vs Lookup, record-level security, bulkification and governor limits,
-writing Apex test classes.
+
